@@ -67,7 +67,7 @@ branches for the `days_since_last == 1` case.
 checked what `datetime.weekday()` returns for each day of the week.
 
 **The root cause:**
-the weird sunday clause caused the code to hit a wall on actual sundays and reset the streak to 0.
+the weird sunday clause caused the code to hit a wall on actual sundays and reset the streak to 1.
 
 **My fix and side-effect check:** Removed the `and today.weekday() != 6`
 condition so the `elif days_since_last == 1:` branch increments the streak
